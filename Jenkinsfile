@@ -23,6 +23,13 @@ pipeline {
         sh '. .venv/bin/activate && pytest tests/ --html=report.html --self-contained-html'
     }
 }
+  stage('Build Image') {
+            steps {
+                echo "构建镜像 ${IMAGE_NAME}:${IMAGE_TAG}"
+                sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
+                sh 'docker images | grep ${IMAGE_NAME}'
+            }
+        }
     }
 
     post {
