@@ -1,5 +1,5 @@
 def add(a, b):
-    return a - b   # 故意写错
+    return a + b
 
 
 def divide(a, b):

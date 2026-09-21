@@ -19,10 +19,10 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                sh '. .venv/bin/activate && pytest tests/ --html=report.html --self-contained-html'
-            }
-        }
+    steps {
+        sh '. .venv/bin/activate && pytest tests/ --html=report.html --self-contained-html'
+    }
+}
     }
 
     post {
