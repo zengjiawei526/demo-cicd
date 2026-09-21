@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    triggers {
+        pollSCM('H/5 * * * *')   // 每 5 分钟检查一次 GitHub 有没有新提交
+    }
     stages {
         stage('Checkout') {
             steps {
